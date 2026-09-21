@@ -1,0 +1,40 @@
+{
+  "branch": "main",
+  "channel": "dev",
+  "commit": "e62dd5351ce34379c7aa7b728e3bcecdf29fb542",
+  "customer_name": "PTM",
+  "extra": {
+    "lang": "HI",
+    "unverifiable_keys": [
+      "test_jig_app"
+    ]
+  },
+  "params": {
+    "customer_app": "V1.0.0",
+    "customer_name": "PTM",
+    "pcb_batch_id": "PCBA\u2013SBID-PCY15SBL0326A",
+    "sdk_version": "WM_SDK_C_260210",
+    "sound_file_version": "V1.0.0_HI",
+    "test_jig_app": "PTM_0_0_7",
+    "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
+  },
+  "prefix": "PTM",
+  "published_at": "2026-09-21T16:14:22Z",
+  "publisher": {
+    "eval_sha256": "1f0a5a2b92b93c132b8be592825fc6492d612446d6aec2407890f94a812a009f",
+    "eval_version": 1,
+    "tool_version": "1.0.0"
+  },
+  "repo": "https://github.com/sp-wal-rd/PTM_TEST_ZIG_FAST.git",
+  "schema": "https://raw.githubusercontent.com/sp-wal-rd/wm_zig_config/main/schema/zig.schema.json",
+  "schema_version": 1,
+  "sources": {
+    "customer_app": "config.py",
+    "customer_name": "declared",
+    "pcb_batch_id": "config.py",
+    "sdk_version": "config.py",
+    "sound_file_version": "config.py",
+    "test_jig_app": "declared",
+    "test_jig_production_app": "config.py"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "count": 1,
+  "schema_version": 1,
+  "zigs": [
+    {
+      "channel": "dev",
+      "commit": "e62dd5351ce34379c7aa7b728e3bcecdf29fb542",
+      "customer_name": "PTM",
+      "file": "zigs/PTM.json",
+      "params": {
+        "customer_app": "V1.0.0",
+        "customer_name": "PTM",
+        "pcb_batch_id": "PCBA\u2013SBID-PCY15SBL0326A",
+        "sdk_version": "WM_SDK_C_260210",
+        "sound_file_version": "V1.0.0_HI",
+        "test_jig_app": "PTM_0_0_7",
+        "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
+      },
+      "prefix": "PTM",
+      "published_at": "2026-09-21T16:14:22Z",
+      "released_file": null
+    }
+  ]
+}

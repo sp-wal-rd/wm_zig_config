@@ -3,8 +3,8 @@
   "schema_version": 1,
   "zigs": [
     {
-      "channel": "dev",
-      "commit": "e62dd5351ce34379c7aa7b728e3bcecdf29fb542",
+      "channel": "released",
+      "commit": "379696075e8732647de8d3b5e669bdd526e1f226",
       "customer_name": "PTM",
       "extra": {
         "lang": "HI",
@@ -12,7 +12,7 @@
           "test_jig_app"
         ]
       },
-      "file": "zigs/PTM.json",
+      "file": "zigs/released/PTM.json",
       "params": {
         "customer_app": "V1.0.0",
         "customer_name": "PTM",
@@ -23,13 +23,13 @@
         "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
       },
       "prefix": "PTM",
-      "published_at": "2026-09-21T16:14:22Z",
+      "published_at": "2026-09-22T06:39:49Z",
       "publisher": {
-        "eval_sha256": "1f0a5a2b92b93c132b8be592825fc6492d612446d6aec2407890f94a812a009f",
+        "eval_sha256": "68c774c32878499cb3363b479b19ca780b6484d351d7d2e522fda928ecac00f6",
         "eval_version": 1,
         "tool_version": "1.0.0"
       },
-      "released_file": null
+      "released_file": "zigs/released/PTM.json"
     }
   ]
 }

@@ -4,7 +4,7 @@
   "zigs": [
     {
       "channel": "dev",
-      "commit": "e560d97882375f145570b3e1dd39a51d04a29500",
+      "commit": "9d720f91ceeea81e2423a2d80f64fff00e275119",
       "customer_name": "PTM",
       "extra": {
         "lang": "HI",
@@ -14,7 +14,7 @@
       },
       "file": "zigs/PTM.json",
       "params": {
-        "customer_app": "V1.0.1",
+        "customer_app": "V1.0.0",
         "customer_name": "PTM",
         "pcb_batch_id": "PCBA\u2013SBID-PCY15SBL0326A",
         "sdk_version": "WM_SDK_C_260210",
@@ -23,9 +23,9 @@
         "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
       },
       "prefix": "PTM",
-      "published_at": "2026-09-21T16:55:57Z",
+      "published_at": "2026-09-22T05:26:27Z",
       "publisher": {
-        "eval_sha256": "1f0a5a2b92b93c132b8be592825fc6492d612446d6aec2407890f94a812a009f",
+        "eval_sha256": "68c774c32878499cb3363b479b19ca780b6484d351d7d2e522fda928ecac00f6",
         "eval_version": 1,
         "tool_version": "1.0.0"
       },

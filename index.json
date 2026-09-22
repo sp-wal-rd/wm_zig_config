@@ -3,8 +3,8 @@
   "schema_version": 1,
   "zigs": [
     {
-      "channel": "dev",
-      "commit": "9d720f91ceeea81e2423a2d80f64fff00e275119",
+      "channel": "released",
+      "commit": "379696075e8732647de8d3b5e669bdd526e1f226",
       "customer_name": "PTM",
       "extra": {
         "lang": "HI",
@@ -12,24 +12,24 @@
           "test_jig_app"
         ]
       },
-      "file": "zigs/PTM.json",
+      "file": "zigs/released/PTM.json",
       "params": {
         "customer_app": "V1.0.0",
         "customer_name": "PTM",
         "pcb_batch_id": "PCBA\u2013SBID-PCY15SBL0326A",
         "sdk_version": "WM_SDK_C_260210",
-        "sound_file_version": "V1.0.1_HI",
+        "sound_file_version": "V1.0.0_HI",
         "test_jig_app": "PTM_0_0_7",
         "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
       },
       "prefix": "PTM",
-      "published_at": "2026-09-22T05:26:27Z",
+      "published_at": "2026-09-22T06:39:49Z",
       "publisher": {
         "eval_sha256": "68c774c32878499cb3363b479b19ca780b6484d351d7d2e522fda928ecac00f6",
         "eval_version": 1,
         "tool_version": "1.0.0"
       },
-      "released_file": null
+      "released_file": "zigs/released/PTM.json"
     }
   ]
 }

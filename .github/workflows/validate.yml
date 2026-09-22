@@ -1,0 +1,52 @@
+# Guard only. This workflow NEVER writes, commits or pushes.
+#
+# The specs in this repository are produced by each ZIG repo's pre-push hook.
+# That is deliberate: generating them here instead would race with the local
+# publishers and put a bot commit between every pair of real ones. This job
+# exists to catch the one thing the local publishers cannot - a developer
+# running a stale or hand-modified publisher.
+name: validate
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install jsonschema
+        run: python -m pip install --quiet jsonschema
+
+      - name: Validate published specs
+        run: python tools/validate.py
+
+      - name: wm_zig.py must stay both importable and pipeable
+        run: |
+          echo "canonical sha256:"
+          sha256sum wm_zig/wm_zig.py
+          python - <<'PY'
+          import ast, sys
+          # The evaluator must stay importable AND pipeable: ZigInstaller reads
+          # this exact file and streams it to the jig's python3 over SSH.
+          src = open('wm_zig/wm_zig.py', encoding='utf-8').read()
+          tree = ast.parse(src)
+          names = {n.name for n in tree.body if isinstance(n, ast.FunctionDef)}
+          for required in ('build_env', 'extract_params', 'read_source', '_eval_main'):
+              if required not in names:
+                  sys.exit('wm_zig.py lost required function: ' + required)
+          if '__main__' not in src:
+              sys.exit('wm_zig.py lost its __main__ block (breaks the SSH path)')
+          print('evaluator contract intact')
+          PY

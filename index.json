@@ -6,6 +6,12 @@
       "channel": "dev",
       "commit": "e62dd5351ce34379c7aa7b728e3bcecdf29fb542",
       "customer_name": "PTM",
+      "extra": {
+        "lang": "HI",
+        "unverifiable_keys": [
+          "test_jig_app"
+        ]
+      },
       "file": "zigs/PTM.json",
       "params": {
         "customer_app": "V1.0.0",
@@ -18,6 +24,11 @@
       },
       "prefix": "PTM",
       "published_at": "2026-09-21T16:14:22Z",
+      "publisher": {
+        "eval_sha256": "1f0a5a2b92b93c132b8be592825fc6492d612446d6aec2407890f94a812a009f",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
       "released_file": null
     }
   ]

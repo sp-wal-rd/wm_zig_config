@@ -1,7 +1,7 @@
 {
   "branch": "main",
   "channel": "released",
-  "commit": "379696075e8732647de8d3b5e669bdd526e1f226",
+  "commit": "4967bc13225dd21b600659de40fad3e03acae0aa",
   "customer_name": "PTM",
   "extra": {
     "lang": "HI",
@@ -10,18 +10,18 @@
     ]
   },
   "params": {
-    "customer_app": "V1.0.0",
+    "customer_app": "V1.0.1",
     "customer_name": "PTM",
-    "pcb_batch_id": "PCBA\u2013SBID-PCY15SBL0326A",
-    "sdk_version": "WM_SDK_C_260210",
-    "sound_file_version": "V1.0.0_HI",
-    "test_jig_app": "PTM_0_0_7",
-    "test_jig_production_app": "WM_PRD_TEST_ZIG_1605_200326_PTM"
+    "pcb_batch_id": "PCBA-PEN15SBL0926A",
+    "sdk_version": "WM_SDK_C_260710",
+    "sound_file_version": "V1.0.0_EN",
+    "test_jig_app": "PTM_0_0_8",
+    "test_jig_production_app": "WMZ_PTM_1.0.0"
   },
   "prefix": "PTM",
-  "published_at": "2026-09-22T06:39:49Z",
+  "published_at": "2026-10-07T06:30:40Z",
   "publisher": {
-    "eval_sha256": "68c774c32878499cb3363b479b19ca780b6484d351d7d2e522fda928ecac00f6",
+    "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
     "eval_version": 1,
     "tool_version": "1.0.0"
   },
@@ -34,7 +34,7 @@
     "pcb_batch_id": "config.py",
     "sdk_version": "config.py",
     "sound_file_version": "config.py",
-    "test_jig_app": "declared",
+    "test_jig_app": "config.py",
     "test_jig_production_app": "config.py"
   }
 }

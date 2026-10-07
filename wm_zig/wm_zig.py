@@ -408,6 +408,34 @@ def derive_prefix(root, decl):
     return ""
 
 
+def default_branch(root):
+    """The branch this repository publishes from.
+
+    Zero-config repos carry no wm_zig.json, so without this ANY branch push
+    would overwrite the program's spec - a developer pushing a scratch branch
+    would redefine what the factory checks against. Resolution order: what
+    origin's HEAD points at, then main/master, then the current branch.
+    """
+    try:
+        out, _, _ = git(root, "symbolic-ref", "--short", "refs/remotes/origin/HEAD",
+                        timeout=10)
+        if out:
+            return out.split("/")[-1]
+    except GitError:
+        pass
+    for cand in ("main", "master"):
+        try:
+            git(root, "rev-parse", "--verify", "refs/heads/" + cand, timeout=10)
+            return cand
+        except GitError:
+            continue
+    try:
+        out, _, _ = git(root, "rev-parse", "--abbrev-ref", "HEAD", timeout=10)
+        return out
+    except GitError:
+        return ""
+
+
 def normalize_remote(url):
     """github.com/Org/Repo(.git), scp-style or https, with or without userinfo
     -> 'github.com/org/repo'. Used only for the expect_remote comparison."""
@@ -972,15 +1000,26 @@ def publish(args):
                 .format(prefix, expect, actual or "<none>"))
             return done(0)
 
-    # Ref gate: branch push -> dev channel, annotated tag -> released channel.
-    channel, ref = "dev", (args.ref or "")
+    # Ref gate.
+    #
+    # DEFAULT: a normal push publishes to the RELEASED channel, so a repository
+    # needs nothing but the file copied in - no tagging step, no config. The
+    # two-stage flow is still there for any program that wants an approval gate:
+    # set "channel": "dev" in wm_zig.json and that repo publishes to the dev
+    # channel on a branch push, promoting to released only when a tag is pushed.
+    channel, ref = "released", (args.ref or "")
     if ref.startswith("refs/tags/"):
-        channel = "released"
+        channel = "released"          # a tag always means approved
     elif ref.startswith("refs/heads/"):
-        want = decl.get("branch")
+        want = decl.get("branch") or default_branch(root)
         if want and ref != "refs/heads/" + str(want):
-            log("push to {0} is not the publishing branch ({1}) - skipping".format(ref, want))
+            log("push to {0} is not this repository's publishing branch ({1}) "
+                "- skipping".format(ref, want))
             return done(0)
+        channel = str(decl.get("channel") or "released").strip().lower()
+        if channel not in ("released", "dev"):
+            log("unknown channel {0!r} in wm_zig.json - using 'released'".format(channel))
+            channel = "released"
     elif ref:
         log("ref {0} is neither a branch nor a tag - skipping".format(ref))
         return done(0)
@@ -1198,9 +1237,9 @@ def cmd_release(root, tag, decl):
         log("tag created locally but the push failed: {0}".format(e))
         log("run:  git push origin {0}".format(tag))
         return 1
-    log("pushed {0} - the approved specification is now published as".format(tag))
-    log("zigs/released/{0}.json, and the ZIG Installer will check jigs".format(prefix))
-    log("against it from now on.")
+    log("pushed {0} - zigs/released/{1}.json now records this build.".format(tag, prefix))
+    log("(Normal pushes already publish there; the tag is the permanent record")
+    log("of what was approved and when.)")
     return 0
 
 
@@ -1224,8 +1263,16 @@ def cmd_status(root, decl):
     log("branch         : {0}".format(branch))
     log("hook installed : {0}".format(
         "yes" if hooks.strip() == ".githooks" else "NO - run --install"))
-    log("a push of this branch updates : zigs/{0}.json  (engineering tip)".format(prefix))
-    log("a push of an annotated tag updates: zigs/released/{0}.json  (approved)".format(prefix))
+    chan = str((decl or {}).get("channel") or "released").strip().lower()
+    pub_branch = (decl or {}).get("branch") or default_branch(root)
+    log("publishes from : {0}".format(pub_branch or "(unknown)"))
+    if chan == "dev":
+        log("a push of that branch updates : zigs/{0}.json  (engineering tip)".format(prefix))
+        log("a push of a tag updates       : zigs/released/{0}.json  (approved)".format(prefix))
+        log("this repo uses the two-stage flow (\"channel\": \"dev\" in wm_zig.json)")
+    else:
+        log("a push of that branch updates : zigs/released/{0}.json".format(prefix))
+        log("the ZIG Installer checks jigs against that file")
     return 0
 
 

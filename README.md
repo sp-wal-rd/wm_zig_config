@@ -38,65 +38,73 @@ tools/                      CANONICAL publisher + evaluator + installer
 (`PTM_TEST_ZIG_FAST` -> `PTM`). This is the join key: the Installer derives the identical prefix from
 the jig's own `~/<PREFIX>_TEST_ZIG_FAST` directory, so the two sides line up without a lookup table.
 
-### dev and released — what the two modes mean
+### How a spec gets published
 
-Every program has up to two published specifications:
+**By default every push publishes the approved spec.** Copy the file in, push,
+and the ZIG Installer checks jigs against what you just pushed. No tagging step,
+no config file.
 
-| | `zigs/<PREFIX>.json` | `zigs/released/<PREFIX>.json` |
+```
+git push origin main     ->  zigs/released/<PREFIX>.json
+```
+
+`zigs/released/` is what the Installer reads, so that is where a repository
+writes by default.
+
+Two guards apply, both automatic:
+
+- **Only the repository's own publishing branch publishes.** That is whatever
+  `origin/HEAD` points at (else `main`/`master`). Pushing a scratch branch
+  changes nothing, so an experiment cannot redefine what the factory checks
+  against.
+- **A tag also publishes as approved**, so a tag remains a permanent record of
+  what was approved and when.
+
+### Optional: the two-stage approval flow
+
+Some programs will eventually want engineering and the factory to move
+independently — R&D pushing freely while the floor stays on an approved build.
+Turn that on per repository with one line in `wm_zig.json`:
+
+```json
+{ "channel": "dev" }
+```
+
+That repository then behaves like this:
+
+| You push | Writes | The Installer uses |
 |---|---|---|
-| written when | you push a **branch** | you push an **annotated tag** |
-| means | what R&D has right now | a build someone approved |
-| changes | on every push that alters a value | only when you make a release |
+| a **branch** | `zigs/<PREFIX>.json` | ignored once a released spec exists |
+| a **tag** | `zigs/released/<PREFIX>.json` | **this** |
 
-**The ZIG Installer checks jigs against `released/` by default.** That is the
-whole point of the split. Without it, the moment R&D pushes a version bump every
-jig on the floor still running last month's *approved* build starts reporting
-NOT OK — production blocked by a change nobody authorised for manufacturing.
+Engineering can then push all day without touching the floor, and
+`python wm_zig/wm_zig.py --release v1.2.0` promotes a build when it is approved.
 
-Until a program has its first release, the Installer falls back to the dev spec
-and says so on every report:
+**The trade-off, stated plainly.** With the default, a jig running last month's
+build starts reporting NOT OK the moment R&D pushes a version change — the floor
+always tracks the newest push. The two-stage flow is what prevents that. Start
+with the default; switch a program over the day that becomes a problem.
 
-```
-Checked against:  PTM e560d97 (engineering version)
-```
+### What the Installer selects
 
-so nobody mistakes an unapproved build for an approved one.
+Settings → Central ZIG Config → **Channel**, default **Auto**: use the released
+spec if there is one, otherwise fall back to the dev spec and label it
+`(engineering version)` on the report. *Released only* refuses that fallback.
 
-## How to make a release
+## Tagging a release (optional)
 
-When a build has been approved for manufacturing, from inside that ZIG repo:
+Normal pushes already publish the approved spec, so this is only for keeping a
+permanent record of an approved build — or required if the repository uses the
+two-stage flow above.
 
 ```
 python wm_zig/wm_zig.py --release v1.2.0
 ```
 
-That is the whole procedure. It will:
-
-1. refuse if anything is uncommitted — the released spec must match exactly what
-   the jigs will pull;
-2. create an annotated tag `v1.2.0` on the current commit;
-3. push the tag, which fires the hook and writes
-   `zigs/released/<PREFIX>.json`.
-
-From that moment every conversion check measures jigs against that build, and the
-report footer changes to `PTM v1.2.0 (released)`.
-
-Leave the tag off (`--release`) and it uses today's date, e.g. `v2026.09.22`.
-
-**Releasing a fix later** is the same command with a new tag. The old released
-spec is replaced; the tag stays in the repo as the record of what was approved
-when.
-
-**If the push fails** (no network, no credentials) the tag is still created
-locally and the command tells you exactly what to run:
-`git push origin v1.2.0`.
-
-### Switching the floor over to released-only
-
-Once the programs you manufacture are being tagged, set Settings → Central ZIG
-Config → **Channel** to *Released only*. The Installer then refuses to check a
-jig against an untagged engineering build at all, instead of quietly falling
-back to it.
+It refuses if anything is uncommitted (the published spec must match exactly what
+the jigs will pull), creates an annotated tag and pushes it. Omit the tag for a
+dated one, e.g. `v2026.10.07`. If the push fails the tag still exists locally and
+the command prints the `git push origin <tag>` to run.
 
 ---
 
@@ -183,6 +191,10 @@ Add one only to override a default:
   it checked rather than skipped.
 - `expect_remote` — set automatically on first publish; it stops a second
   checkout of the same program overwriting the first one's spec.
+- `channel` — `"dev"` switches this repository to the two-stage approval flow
+  described above. Omit it and every push publishes the approved spec.
+- `branch` — pin the publishing branch. Omit it and the repository's default
+  branch is detected automatically.
 
 ## Rules
 

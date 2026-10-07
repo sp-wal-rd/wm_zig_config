@@ -1,7 +1,36 @@
 {
-  "count": 1,
+  "count": 2,
   "schema_version": 1,
   "zigs": [
+    {
+      "channel": "released",
+      "commit": "48755f732a55d4e8b9fd35b7b2aaf3e091276f74",
+      "customer_name": "EBZ",
+      "extra": {
+        "unverifiable_keys": [
+          "test_jig_app",
+          "test_jig_production_app"
+        ]
+      },
+      "file": "zigs/released/EBZ.json",
+      "params": {
+        "customer_app": "WM_TMS_1.0.1",
+        "customer_name": "EBZ",
+        "pcb_batch_id": "PCBA-EBID-PCY15EBZ0425A",
+        "sdk_version": "SDK_B_241231",
+        "sound_file_version": "EBZ_XXX_v1.0.1",
+        "test_jig_app": "",
+        "test_jig_production_app": ""
+      },
+      "prefix": "EBZ",
+      "published_at": "2026-10-07T10:16:27Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/EBZ.json"
+    },
     {
       "channel": "released",
       "commit": "4967bc13225dd21b600659de40fad3e03acae0aa",

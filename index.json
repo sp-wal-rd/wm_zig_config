@@ -1,7 +1,31 @@
 {
-  "count": 2,
+  "count": 3,
   "schema_version": 1,
   "zigs": [
+    {
+      "channel": "released",
+      "commit": "b6335b441a553a135ee6428fb0d50f05b8a7b7d4",
+      "customer_name": "APB",
+      "extra": {},
+      "file": "zigs/released/APB.json",
+      "params": {
+        "customer_app": "APBA_1605_2_RL_PROD_1_0_1",
+        "customer_name": "APB",
+        "pcb_batch_id": "LBID-PCY15ETR1726A",
+        "sdk_version": "WM_SDK_C_260908",
+        "sound_file_version": "APB_XXX_v1.0.7",
+        "test_jig_app": "APB_1_0_1",
+        "test_jig_production_app": "APBA_TEST_ZIG_1_0_0"
+      },
+      "prefix": "APB",
+      "published_at": "2026-10-09T12:37:55Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/APB.json"
+    },
     {
       "channel": "released",
       "commit": "48755f732a55d4e8b9fd35b7b2aaf3e091276f74",

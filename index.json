@@ -1,5 +1,5 @@
 {
-  "count": 7,
+  "count": 8,
   "schema_version": 1,
   "zigs": [
     {
@@ -25,6 +25,30 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/APB.json"
+    },
+    {
+      "channel": "released",
+      "commit": "a55e1dfe57fb5ff46ce2674b64bcccc8cb1c826b",
+      "customer_name": "BPCV2",
+      "extra": {},
+      "file": "zigs/released/BPCV2.json",
+      "params": {
+        "customer_app": "v30",
+        "customer_name": "BPCV2",
+        "pcb_batch_id": "PCBA-BBID-PCY15NBT0225A",
+        "sdk_version": "SDK_B_241231",
+        "sound_file_version": "1.0",
+        "test_jig_app": "1.0.0",
+        "test_jig_production_app": "BPC_PRD_101025_V4"
+      },
+      "prefix": "BPCV2",
+      "published_at": "2026-10-09T13:43:42Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/BPCV2.json"
     },
     {
       "channel": "released",

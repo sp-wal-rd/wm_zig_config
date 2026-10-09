@@ -1,0 +1,41 @@
+{
+  "branch": "master",
+  "channel": "released",
+  "commit": "e6b56f0d42f608c359e49c119c068d0e83289c42",
+  "customer_name": "BPCR_BAT",
+  "extra": {
+    "unverifiable_keys": [
+      "pcb_batch_id",
+      "test_jig_app",
+      "test_jig_production_app"
+    ]
+  },
+  "params": {
+    "customer_app": "APP_A_1.0.1",
+    "customer_name": "BPCR_BAT",
+    "pcb_batch_id": "",
+    "sdk_version": "SDK_B_241231",
+    "sound_file_version": "1.0",
+    "test_jig_app": "",
+    "test_jig_production_app": ""
+  },
+  "prefix": "BPCR_BAT",
+  "published_at": "2026-10-09T13:59:04Z",
+  "publisher": {
+    "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+    "eval_version": 1,
+    "tool_version": "1.0.0"
+  },
+  "repo": "https://github.com/Jaydeep2990/BPCR_BAT_TEST_ZIG.git",
+  "schema": "https://raw.githubusercontent.com/sp-wal-rd/wm_zig_config/main/schema/zig.schema.json",
+  "schema_version": 1,
+  "sources": {
+    "customer_app": "config.py",
+    "customer_name": "declared",
+    "pcb_batch_id": "unverifiable",
+    "sdk_version": "config.py",
+    "sound_file_version": "config.py",
+    "test_jig_app": "unverifiable",
+    "test_jig_production_app": "unverifiable"
+  }
+}

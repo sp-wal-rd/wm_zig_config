@@ -1,0 +1,39 @@
+{
+  "branch": "master",
+  "channel": "released",
+  "commit": "30b1d02752449b929b51eecd2fa1098a29fdb50a",
+  "customer_name": "MBK",
+  "extra": {
+    "unverifiable_keys": [
+      "test_jig_app"
+    ]
+  },
+  "params": {
+    "customer_app": "MBK_PRD_2.0.3",
+    "customer_name": "MBK",
+    "pcb_batch_id": "PCBA-IBID-PCY15IBO0925A",
+    "sdk_version": "WM_SDK_C_250827",
+    "sound_file_version": "MBK_XXX_v1.0.2",
+    "test_jig_app": "",
+    "test_jig_production_app": "WM_PRD_1605_013126_MBK"
+  },
+  "prefix": "MBK",
+  "published_at": "2026-10-09T13:41:09Z",
+  "publisher": {
+    "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+    "eval_version": 1,
+    "tool_version": "1.0.0"
+  },
+  "repo": "https://github.com/Jaydeep2990/MBK_TEST_ZIG_FAST.git",
+  "schema": "https://raw.githubusercontent.com/sp-wal-rd/wm_zig_config/main/schema/zig.schema.json",
+  "schema_version": 1,
+  "sources": {
+    "customer_app": "config.py",
+    "customer_name": "declared",
+    "pcb_batch_id": "config.py",
+    "sdk_version": "config.py",
+    "sound_file_version": "config.py",
+    "test_jig_app": "unverifiable",
+    "test_jig_production_app": "config.py"
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "branch": "master",
+  "channel": "released",
+  "commit": "7b7ea6225d5cef1d3d52cd2973477ab719be183f",
+  "customer_name": "APCDQR",
+  "extra": {
+    "unverifiable_keys": [
+      "test_jig_app",
+      "test_jig_production_app"
+    ]
+  },
+  "params": {
+    "customer_app": "APP_A_3.0.0",
+    "customer_name": "APCDQR",
+    "pcb_batch_id": "PCBA-DBID-PCY15HSB1225A",
+    "sdk_version": "SDK_A_250115",
+    "sound_file_version": "1.2",
+    "test_jig_app": "",
+    "test_jig_production_app": ""
+  },
+  "prefix": "APCDQR",
+  "published_at": "2026-10-09T13:58:49Z",
+  "publisher": {
+    "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+    "eval_version": 1,
+    "tool_version": "1.0.0"
+  },
+  "repo": "https://github.com/Jaydeep2990/APCDQR_TEST_ZIG.git",
+  "schema": "https://raw.githubusercontent.com/sp-wal-rd/wm_zig_config/main/schema/zig.schema.json",
+  "schema_version": 1,
+  "sources": {
+    "customer_app": "config.py",
+    "customer_name": "declared",
+    "pcb_batch_id": "config.py",
+    "sdk_version": "config.py",
+    "sound_file_version": "config.py",
+    "test_jig_app": "unverifiable",
+    "test_jig_production_app": "unverifiable"
+  }
+}

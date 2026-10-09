@@ -1,5 +1,5 @@
 {
-  "count": 11,
+  "count": 12,
   "schema_version": 1,
   "zigs": [
     {
@@ -78,6 +78,35 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/BPCB.json"
+    },
+    {
+      "channel": "released",
+      "commit": "bbb2af817df3de3d6a44e2ce92d0a3b2ee2d0ce6",
+      "customer_name": "BPCR",
+      "extra": {
+        "unverifiable_keys": [
+          "pcb_batch_id",
+          "test_jig_app"
+        ]
+      },
+      "file": "zigs/released/BPCR.json",
+      "params": {
+        "customer_app": "NA",
+        "customer_name": "BPCR",
+        "pcb_batch_id": "",
+        "sdk_version": "SDK_B_241231",
+        "sound_file_version": "1.0",
+        "test_jig_app": "",
+        "test_jig_production_app": "BPC_RFB_270826_V4"
+      },
+      "prefix": "BPCR",
+      "published_at": "2026-10-09T13:59:12Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/BPCR.json"
     },
     {
       "channel": "released",

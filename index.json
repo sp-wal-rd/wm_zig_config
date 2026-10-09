@@ -1,5 +1,5 @@
 {
-  "count": 5,
+  "count": 6,
   "schema_version": 1,
   "zigs": [
     {
@@ -54,6 +54,30 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/EBZ.json"
+    },
+    {
+      "channel": "released",
+      "commit": "08aa083b2e29e17d777969d0ebd6c1be30509d1c",
+      "customer_name": "MSP1605",
+      "extra": {},
+      "file": "zigs/released/MSP1605.json",
+      "params": {
+        "customer_app": "MSP_PRD_1.1.2",
+        "customer_name": "MSP1605",
+        "pcb_batch_id": "PCBA-MBID-PCY15EPI0926A",
+        "sdk_version": "WM_SDK_C_250827",
+        "sound_file_version": "MSP_XXX_v1.0.3",
+        "test_jig_app": "MSP_0_0_1",
+        "test_jig_production_app": "WM_PRD_1605_250926_MSP"
+      },
+      "prefix": "MSP1605",
+      "published_at": "2026-10-09T13:39:14Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/MSP1605.json"
     },
     {
       "channel": "released",

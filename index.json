@@ -1,5 +1,5 @@
 {
-  "count": 3,
+  "count": 4,
   "schema_version": 1,
   "zigs": [
     {
@@ -83,6 +83,30 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/PTM.json"
+    },
+    {
+      "channel": "released",
+      "commit": "1bbff573b60158a81a4933540f3d280133d991d2",
+      "customer_name": "APC",
+      "extra": {},
+      "file": "zigs/released/WMZ_APC.json",
+      "params": {
+        "customer_app": "APP_A_4.0.1",
+        "customer_name": "APC",
+        "pcb_batch_id": "PCBA-HBID-PCY15ADS0726A",
+        "sdk_version": "WM_SDK_D_260623",
+        "sound_file_version": "v1.0.2",
+        "test_jig_app": "WMZ_APC_0_3_3",
+        "test_jig_production_app": "WM_PRD_GW3NS-8_260625"
+      },
+      "prefix": "WMZ_APC",
+      "published_at": "2026-10-09T12:46:16Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/WMZ_APC.json"
     }
   ]
 }

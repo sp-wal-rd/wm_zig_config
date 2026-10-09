@@ -1,5 +1,5 @@
 {
-  "count": 4,
+  "count": 5,
   "schema_version": 1,
   "zigs": [
     {
@@ -83,6 +83,30 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/PTM.json"
+    },
+    {
+      "channel": "released",
+      "commit": "7ced63b2ed7c14ddcb64fa78037b03c9db58f785",
+      "customer_name": "SBIA",
+      "extra": {},
+      "file": "zigs/released/SBIA.json",
+      "params": {
+        "customer_app": "SBIA_1605_2_RL_PROD_1.0.3",
+        "customer_name": "SBIA",
+        "pcb_batch_id": "PCBA-HGRT-PCY15AHS1826A",
+        "sdk_version": "WM_SDK_C_260824",
+        "sound_file_version": "SBIA_XXX_v1.0.0",
+        "test_jig_app": "SBIA_1_0_3",
+        "test_jig_production_app": "SBIA_TEST_ZIG_1_0_1"
+      },
+      "prefix": "SBIA",
+      "published_at": "2026-10-09T13:32:50Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/SBIA.json"
     },
     {
       "channel": "released",

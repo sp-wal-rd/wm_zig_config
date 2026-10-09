@@ -1,5 +1,5 @@
 {
-  "count": 12,
+  "count": 13,
   "schema_version": 1,
   "zigs": [
     {
@@ -218,6 +218,34 @@
         "tool_version": "1.0.0"
       },
       "released_file": "zigs/released/MBK.json"
+    },
+    {
+      "channel": "released",
+      "commit": "bb36c1ccf7b20e9ffa60a06fb177336740459f85",
+      "customer_name": "MSP",
+      "extra": {
+        "unverifiable_keys": [
+          "test_jig_app"
+        ]
+      },
+      "file": "zigs/released/MSP.json",
+      "params": {
+        "customer_app": "MSP_PRD_1.1.1",
+        "customer_name": "MSP",
+        "pcb_batch_id": "PCBA-MBID-PCY15EPI0725A",
+        "sdk_version": "SDK_B_250812",
+        "sound_file_version": "MSP_XXX_v1.0.3",
+        "test_jig_app": "",
+        "test_jig_production_app": "MSP_PRD_120725_V1"
+      },
+      "prefix": "MSP",
+      "published_at": "2026-10-09T13:59:20Z",
+      "publisher": {
+        "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
+        "eval_version": 1,
+        "tool_version": "1.0.0"
+      },
+      "released_file": "zigs/released/MSP.json"
     },
     {
       "channel": "released",

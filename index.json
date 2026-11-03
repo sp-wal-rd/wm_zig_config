@@ -273,7 +273,7 @@
     },
     {
       "channel": "released",
-      "commit": "156023292c18fa4bc5490f821683f585298db6ff",
+      "commit": "9b4183197b48d1d986ac13aab4f2c0a1866abf3f",
       "customer_name": "PTM",
       "extra": {
         "lang": "HI",
@@ -288,11 +288,11 @@
         "pcb_batch_id": "PCBA-PEN15SBL1026A",
         "sdk_version": "WM_SDK_C_260710",
         "sound_file_version": "V1.0.0_EN",
-        "test_jig_app": "PTM_0_0_9",
+        "test_jig_app": "PTM_0_1_0",
         "test_jig_production_app": "WMZ_PTM_1.0.0"
       },
       "prefix": "PTM",
-      "published_at": "2026-10-28T04:17:51Z",
+      "published_at": "2026-11-03T05:26:09Z",
       "publisher": {
         "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
         "eval_version": 1,

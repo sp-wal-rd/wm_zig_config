@@ -57,7 +57,7 @@
     },
     {
       "channel": "released",
-      "commit": "e05ab5c874916a00d6055549803ebf461a196c5c",
+      "commit": "01495071aab2a73211e863ceceacbca188d44ff6",
       "customer_name": "BPCB",
       "extra": {},
       "file": "zigs/released/BPCB.json",
@@ -67,11 +67,11 @@
         "pcb_batch_id": "BBID-PCY15NBT0926A",
         "sdk_version": "WM_SDK_C_260824",
         "sound_file_version": "1.1",
-        "test_jig_app": "1.0.0",
+        "test_jig_app": "1.0.1",
         "test_jig_production_app": "BPCB_TEST_ZIG_1_1_0"
       },
       "prefix": "BPCB",
-      "published_at": "2026-11-05T11:24:50Z",
+      "published_at": "2026-11-05T14:47:33Z",
       "publisher": {
         "eval_sha256": "19549580ca132e0fb1dc79b2b682282f534ca6a4488f327a5210cf52fe087e99",
         "eval_version": 1,
